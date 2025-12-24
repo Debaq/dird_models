@@ -1,22 +1,62 @@
 {
-  "model_version": "DIRDv1r1",
-  "model_type": "detection",
+  "model_info": {
+    "version": "DIRDv1r1",
+    "type": "YOLOv8 - Detection",
+    "date_trained": "2024-12-15",
+    "input_size": [640, 640]
+  },
   "classes": [
-"Disco optico",
-"Exudado Duro",
-"Fovea",
-"Hemorragia",
-"Mancha Algodonosa",
-"Microhemorragias",
-"Edema"
+    "optic_disc",
+    "hard_exudate",
+    "fovea",
+    "hemorrhage",
+    "cotton_wool_spot",
+    "microhemorrhages",
+    "edema"
   ],
-  "input_size": [640, 640],
-  "confidence_threshold": 0.5,
-  "iou_threshold": 0.45,
-  "date_trained": "2024-12-15",
-  "metrics": {
-    "mAP50": 0.87,
-    "precision": 0.85,
-    "recall": 0.83
+  "performance_metrics": {
+    "global": {
+      "mAP50": 0.826,
+      "mAP50-95": 0.450,
+      "precision_overall": 0.82,
+      "recall_overall": 0.79
+    },
+    "per_class_mAP50": {
+      "optic_disc": 0.984,
+      "hard_exudate": 0.781,
+      "fovea": 0.957,
+      "hemorrhage": 0.698,
+      "cotton_wool_spot": 0.830,
+      "microhemorrhages": 0.538,
+      "edema": 0.995
+    }
+  },
+  "analysis_report": {
+    "status": "REQUIRES_IMPROVEMENT",
+    "critical_findings": [
+      {
+        "issue": "Bajo rendimiento en microhemorrhages",
+        "metric": "mAP 0.538",
+        "observation": "Es la clase con peor desempeño. La matriz de confusión muestra alta confusión con el fondo (background).",
+        "cause": "Los objetos son demasiado pequeños para la resolución de entrada actual de 640x640."
+      },
+      {
+        "issue": "Falsos positivos/negativos en edema",
+        "metric": "mAP 0.995 (Engañoso)",
+        "observation": "El puntaje es casi perfecto, pero el soporte de datos es extremadamente bajo en el set de validación.",
+        "cause": "Desbalance severo de clases. El modelo no ha sido desafiado lo suficiente con esta clase."
+      },
+      {
+        "issue": "Convergencia del entrenamiento",
+        "observation": "Las curvas de pérdida (Box/Cls Loss) seguían descendiendo al final de las 100 épocas.",
+        "implication": "El modelo aún tenía capacidad de aprender más antes de estancarse."
+      }
+    ],
+    "recommendations_next_steps": [
+      "Aumentar input_size a 1024x1024 o 1280x1280 para recuperar detalles de microhemorrhages.",
+      "Recolectar más imágenes reales de edema o aplicar técnicas de oversampling.",
+      "Extender el entrenamiento a 150 o 200 épocas.",
+      "Verificar traducción de clases: 'Mancha Algodonosa' mapeada a 'cotton_wool_spot'."
+    ]
   }
 }
