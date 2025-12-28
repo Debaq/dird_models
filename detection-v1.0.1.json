@@ -1,7 +1,7 @@
 {
   "model_info": {
     "version": "DIRDv1r1",
-    "type": "YOLOv8 - Detection",
+    "type": "YOLOv11 - Detection",
     "date_trained": "2024-12-15",
     "input_size": [640, 640]
   },
@@ -159,6 +159,19 @@
       "microhemorrhages": 0.538,
       "edema": 0.995
     }
+  },
+    "color_palette": {
+    "optic_disc": "#10b981",
+    "hard_exudate": "#f59e0b",
+    "fovea": "#06b6d4",
+    "hemorrhage": "#ef4444",
+    "cotton_wool_spot": "#a855f7",
+    "microhemorrhages": "#ec4899",
+    "edema": "#3b82f6",
+    "microaneurysm": "#f97316",
+    "neovascularization": "#dc2626",
+    "venous_beading": "#9333ea",
+    "irma": "#8b5cf6"
   },
   "analysis_report": {
     "status": "REQUIRES_IMPROVEMENT",
