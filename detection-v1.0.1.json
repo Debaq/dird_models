@@ -1,12 +1,10 @@
 {
-  "model_version": "v1.0.1",
-  "model_type": "detection",
-  "model_name": "YOLOv11n Diabetic Retinopathy Detection (DIRDv1r1)",
-  "date_trained": "2024-12-15",
-  "input_size": [640, 640],
-  "confidence_threshold": 0.25,
-  "iou_threshold": 0.45,
-
+  "model_info": {
+    "version": "DIRDv1r1",
+    "type": "YOLOv8 - Detection",
+    "date_trained": "2024-12-15",
+    "input_size": [640, 640]
+  },
   "classes": [
     {
       "index": 0,
@@ -15,10 +13,9 @@
       "display_name_es": "Disco Óptico",
       "category": "anatomical_landmark",
       "severity_impact": "none",
-      "description_en": "Optic disc (optic nerve head) - essential landmark for anatomical orientation",
-      "description_es": "Disco óptico (cabeza del nervio óptico) - marca anatómica esencial para orientación",
-      "currently_detected": true,
-      "aliases": ["opticDisc", "optic_nerve_head", "optic_disk", "disc", "disco_optico", "disco"]
+      "description_en": "Optic disc (optic nerve head)",
+      "description_es": "Disco óptico (cabeza del nervio óptico)",
+      "currently_detected": true
     },
     {
       "index": 1,
@@ -27,20 +24,10 @@
       "display_name_es": "Exudado Duro",
       "category": "lesion",
       "severity_impact": "moderate",
-      "description_en": "Lipid deposits indicating vascular leakage and blood-retinal barrier breakdown",
-      "description_es": "Depósitos lipídicos que indican fuga vascular y ruptura de barrera hematorretiniana",
+      "description_en": "Lipid deposits indicating vascular leakage",
+      "description_es": "Depósitos lipídicos que indican fuga vascular",
       "currently_detected": true,
-      "aliases": [
-        "hardExudate",
-        "hard_exudates",
-        "hardExudates",
-        "exudate",
-        "exudates",
-        "exudado_duro",
-        "exudados_duros",
-        "lipid_deposit",
-        "lipid_deposits"
-      ]
+      "aliases": ["hardExudate", "hard_exudates", "hardExudates", "exudate", "exudates"]
     },
     {
       "index": 2,
@@ -51,8 +38,7 @@
       "severity_impact": "none",
       "description_en": "Central area of the macula responsible for sharp central vision",
       "description_es": "Área central de la mácula responsable de la visión central nítida",
-      "currently_detected": true,
-      "aliases": ["fovea_centralis", "macula", "macula_center", "fovea_central"]
+      "currently_detected": true
     },
     {
       "index": 3,
@@ -61,20 +47,10 @@
       "display_name_es": "Hemorragia",
       "category": "lesion",
       "severity_impact": "moderate_to_severe",
-      "description_en": "Bleeding in the retina (dot, blot, or flame-shaped hemorrhages)",
-      "description_es": "Sangrado en la retina (hemorragias en forma de punto, mancha o llama)",
+      "description_en": "Bleeding in the retina (dot, blot, or flame-shaped)",
+      "description_es": "Sangrado en la retina (forma de punto, mancha o llama)",
       "currently_detected": true,
-      "aliases": [
-        "hemorrhages",
-        "hemorragia",
-        "hemorragias",
-        "blot_hemorrhage",
-        "blot_hemorrhages",
-        "flame_hemorrhage",
-        "flame_hemorrhages",
-        "retinal_hemorrhage",
-        "retinal_hemorrhages"
-      ]
+      "aliases": ["hemorrhages", "hemorragia", "hemorragias", "blot_hemorrhage", "flame_hemorrhage"]
     },
     {
       "index": 4,
@@ -83,20 +59,10 @@
       "display_name_es": "Exudado Blando",
       "category": "lesion",
       "severity_impact": "moderate_to_severe",
-      "description_en": "Soft exudates caused by ischemia and nerve fiber layer infarction",
-      "description_es": "Exudados blandos causados por isquemia e infarto de capa de fibras nerviosas",
+      "description_en": "Soft exudates caused by ischemia",
+      "description_es": "Exudados blandos causados por isquemia",
       "currently_detected": true,
-      "aliases": [
-        "soft_exudate",
-        "soft_exudates",
-        "softExudate",
-        "softExudates",
-        "cotton_wool",
-        "cotton_wool_spots",
-        "cws",
-        "exudado_blando",
-        "exudados_blandos"
-      ]
+      "aliases": ["soft_exudate", "soft_exudates", "softExudate", "softExudates", "cotton_wool", "cws"]
     },
     {
       "index": 5,
@@ -105,18 +71,10 @@
       "display_name_es": "Microhemorragias",
       "category": "lesion",
       "severity_impact": "mild_to_moderate",
-      "description_en": "Small punctate hemorrhages, often confused with microaneurysms. Appear as tiny red dots.",
-      "description_es": "Pequeñas hemorragias puntiformes, a menudo confundidas con microaneurismas. Aparecen como puntos rojos diminutos.",
+      "description_en": "Small punctate hemorrhages, often confused with microaneurysms",
+      "description_es": "Pequeñas hemorragias puntiformes, a menudo confundidas con microaneurismas",
       "currently_detected": true,
-      "aliases": [
-        "microhemorrhage",
-        "microhemorragia",
-        "microhemorragias",
-        "dot_hemorrhage",
-        "dot_hemorrhages",
-        "punctate_hemorrhage",
-        "punctate_hemorrhages"
-      ]
+      "aliases": ["microhemorrhage", "microhemorragia", "microhemorragias", "dot_hemorrhage"]
     },
     {
       "index": 6,
@@ -125,18 +83,10 @@
       "display_name_es": "Edema Macular",
       "category": "lesion",
       "severity_impact": "severe",
-      "description_en": "Fluid accumulation in the macula causing retinal thickening",
-      "description_es": "Acumulación de líquido en la mácula causando engrosamiento retiniano",
+      "description_en": "Fluid accumulation in the macula",
+      "description_es": "Acumulación de líquido en la mácula",
       "currently_detected": true,
-      "aliases": [
-        "macular_edema",
-        "macular_oedema",
-        "diabetic_macular_edema",
-        "diabetic_macular_oedema",
-        "dme",
-        "edema_macular",
-        "retinal_edema"
-      ]
+      "aliases": ["macular_edema", "diabetic_macular_edema", "dme"]
     },
     {
       "index": 7,
@@ -145,18 +95,10 @@
       "display_name_es": "Microaneurisma",
       "category": "lesion",
       "severity_impact": "mild",
-      "description_en": "Small dilations of retinal capillaries - earliest clinical sign of diabetic retinopathy",
-      "description_es": "Pequeñas dilataciones de los capilares retinianos - signo clínico más temprano de retinopatía diabética",
+      "description_en": "Small dilations of retinal capillaries",
+      "description_es": "Pequeñas dilataciones de los capilares retinianos",
       "currently_detected": false,
-      "aliases": [
-        "microaneurysms",
-        "microaneurisma",
-        "microaneurismas",
-        "ma",
-        "mas",
-        "capillary_microaneurysm",
-        "capillary_microaneurysms"
-      ]
+      "aliases": ["microaneurysms", "microaneurisma", "microaneurismas", "ma"]
     },
     {
       "index": 8,
@@ -165,20 +107,10 @@
       "display_name_es": "Neovascularización",
       "category": "lesion",
       "severity_impact": "severe",
-      "description_en": "Abnormal new blood vessel growth - hallmark of proliferative diabetic retinopathy",
-      "description_es": "Crecimiento anormal de nuevos vasos sanguíneos - característica de retinopatía diabética proliferativa",
+      "description_en": "Abnormal new blood vessel growth",
+      "description_es": "Crecimiento anormal de nuevos vasos sanguíneos",
       "currently_detected": false,
-      "aliases": [
-        "neovascularisation",
-        "nvd",
-        "nve",
-        "nvi",
-        "new_vessels",
-        "new_vessel",
-        "neovascular",
-        "neovascularizacion",
-        "new_blood_vessels"
-      ]
+      "aliases": ["neovascularisation", "nvd", "nve", "nvi", "new_vessels"]
     },
     {
       "index": 9,
@@ -187,18 +119,10 @@
       "display_name_es": "Arrosariamiento Venoso",
       "category": "lesion",
       "severity_impact": "severe",
-      "description_en": "Irregular caliber of retinal veins - sign of severe ischemia",
-      "description_es": "Calibre irregular de las venas retinianas - signo de isquemia severa",
+      "description_en": "Irregular caliber of retinal veins",
+      "description_es": "Calibre irregular de las venas retinianas",
       "currently_detected": false,
-      "aliases": [
-        "venousBeading",
-        "vb",
-        "beading",
-        "venous_abnormality",
-        "venous_abnormalities",
-        "vein_beading",
-        "arrosariamiento_venoso"
-      ]
+      "aliases": ["venousBeading", "vb", "beading", "venous_abnormality"]
     },
     {
       "index": 10,
@@ -207,85 +131,61 @@
       "display_name_es": "AMIR",
       "category": "lesion",
       "severity_impact": "severe",
-      "description_en": "Intraretinal microvascular abnormalities - dilated capillaries or shunt vessels",
-      "description_es": "Anomalías microvasculares intrarretinianas - capilares dilatados o vasos de derivación",
+      "description_en": "Intraretinal microvascular abnormalities",
+      "description_es": "Anomalías microvasculares intrarretinianas",
       "currently_detected": false,
-      "aliases": [
-        "IRMA",
-        "intraretinal_microvascular_abnormality",
-        "intraretinal_microvascular_abnormalities",
-        "amir",
-        "AMIR",
-        "intraretinal_microangiopathy",
-        "microvascular_abnormality"
-      ]
+      "aliases": ["IRMA", "intraretinal_microvascular_abnormality", "intraretinal_microvascular_abnormalities", "amir"]
     }
   ],
-
   "class_groups": {
     "anatomical_landmarks": [0, 2],
     "early_stage_lesions": [5, 7],
     "moderate_lesions": [1, 3, 4],
-    "severe_lesions": [6, 8, 9, 10],
-    "currently_detected_by_model": [0, 1, 2, 3, 4, 5, 6],
-    "future_detection": [7, 8, 9, 10]
+    "severe_lesions": [6, 8, 9, 10]
   },
-
-  "metrics": {
-    "mAP50": 0.826,
-    "mAP50_95": 0.65,
-    "precision": 0.82,
-    "recall": 0.79,
-    "f1_score": 0.80,
+  "performance_metrics": {
+    "global": {
+      "mAP50": 0.826,
+      "mAP50-95": 0.450,
+      "precision_overall": 0.82,
+      "recall_overall": 0.79
+    },
     "per_class_mAP50": {
       "optic_disc": 0.984,
-      "hard_exudate": 0.819,
-      "fovea": 0.925,
-      "hemorrhage": 0.880,
-      "cotton_wool_spot": 0.722,
+      "hard_exudate": 0.781,
+      "fovea": 0.957,
+      "hemorrhage": 0.698,
+      "cotton_wool_spot": 0.830,
       "microhemorrhages": 0.538,
       "edema": 0.995
     }
   },
-
-  "training_info": {
-    "dataset": "Custom DR Dataset v2.1 (DIRDv1r1)",
-    "num_images": 5420,
-    "num_annotations": 48730,
-    "epochs": 100,
-    "framework": "Ultralytics YOLOv8",
-    "input_resolution": "640x640",
-    "known_issues": [
-      "Microhemorrhages: objects too small for current 640x640 input resolution",
-      "Edema: extremely low support in validation set (class imbalance)",
-      "Training convergence: loss curves suggest benefit from extended training beyond 100 epochs"
+  "analysis_report": {
+    "status": "REQUIRES_IMPROVEMENT",
+    "critical_findings": [
+      {
+        "issue": "Bajo rendimiento en microhemorrhages",
+        "metric": "mAP 0.538",
+        "observation": "Es la clase con peor desempeño. La matriz de confusión muestra alta confusión con el fondo (background).",
+        "cause": "Los objetos son demasiado pequeños para la resolución de entrada actual de 640x640."
+      },
+      {
+        "issue": "Falsos positivos/negativos en edema",
+        "metric": "mAP 0.995 (Engañoso)",
+        "observation": "El puntaje es casi perfecto, pero el soporte de datos es extremadamente bajo en el set de validación.",
+        "cause": "Desbalance severo de clases. El modelo no ha sido desafiado lo suficiente con esta clase."
+      },
+      {
+        "issue": "Convergencia del entrenamiento",
+        "observation": "Las curvas de pérdida (Box/Cls Loss) seguían descendiendo al final de las 100 épocas.",
+        "implication": "El modelo aún tenía capacidad de aprender más antes de estancarse."
+      }
     ],
-    "recommended_improvements": [
-      "Increase input resolution to 1024x1024 or 1280x1280",
-      "Address class imbalance through data collection or oversampling",
-      "Extend training beyond 100 epochs",
-      "Verify class label mappings for microhemorrhages"
+    "recommendations_next_steps": [
+      "Aumentar input_size a 1024x1024 o 1280x1280 para recuperar detalles de microhemorrhages.",
+      "Recolectar más imágenes reales de edema o aplicar técnicas de oversampling.",
+      "Extender el entrenamiento a 150 o 200 épocas.",
+      "Verificar traducción de clases: 'Mancha Algodonosa' mapeada a 'cotton_wool_spot'."
     ]
-  },
-
-  "color_palette": {
-    "optic_disc": "#10b981",
-    "hard_exudate": "#f59e0b",
-    "fovea": "#06b6d4",
-    "hemorrhage": "#ef4444",
-    "cotton_wool_spot": "#a855f7",
-    "microhemorrhages": "#ec4899",
-    "edema": "#3b82f6",
-    "microaneurysm": "#f97316",
-    "neovascularization": "#dc2626",
-    "venous_beading": "#9333ea",
-    "irma": "#8b5cf6"
-  },
-
-  "usage_notes": {
-    "normalization": "Use technical_name as the canonical reference. Aliases provided for backward compatibility and user input flexibility.",
-    "classification": "Classes with currently_detected: false are included for future model versions and clinical guideline compatibility.",
-    "severity_impact": "Used by clinical guidelines to determine diabetic retinopathy severity levels.",
-    "categories": "anatomical_landmark classes are used for spatial analysis and quadrant detection, lesion classes for clinical classification."
   }
 }
