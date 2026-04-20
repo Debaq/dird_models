@@ -1,5 +1,7 @@
 # DIRD Models
 
+[![DOI](https://zenodo.org/badge/1121740748.svg)](https://doi.org/10.5281/zenodo.19666694)
+
 Computer vision models for pathological retina finding detection, focused on **Diabetic Retinopathy (DR)**.
 
 DIRD (Diabetic & Intelligent Retinal Detection) ships pretrained YOLO models plus metadata JSONs describing classes, clinical semantics, performance, and visualization palettes. Models are exported to ONNX for browser / edge inference via `onnxruntime-web`.
