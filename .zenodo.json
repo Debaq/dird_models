@@ -1,0 +1,28 @@
+{
+  "title": "DIRD Models: Pretrained YOLO models for diabetic retinopathy detection and segmentation",
+  "description": "Computer vision models for pathological retina finding detection, focused on Diabetic Retinopathy (DR). Ships pretrained YOLO models (detection + segmentation) plus metadata JSONs describing classes, clinical semantics, performance, and visualization palettes. Models are exported to ONNX for browser/edge inference via onnxruntime-web.",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Baier Quezada, Nicolás",
+      "orcid": "0000-0003-2818-0990"
+    }
+  ],
+  "keywords": [
+    "diabetic retinopathy",
+    "retinal imaging",
+    "object detection",
+    "semantic segmentation",
+    "YOLO",
+    "YOLOv11",
+    "YOLOv8",
+    "ONNX",
+    "medical imaging",
+    "computer vision",
+    "deep learning",
+    "ophthalmology"
+  ],
+  "access_right": "open",
+  "language": "eng"
+}
