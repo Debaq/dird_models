@@ -1,7 +1,7 @@
 {
   "model_info": {
     "version": "DIRDv2r0",
-    "type": "YOLOv26n - Detection (end2end NMS)",
+    "type": "YOLOv26s - Detection (end2end NMS)",
     "date_trained": "2026-04-21",
     "input_size": [640, 640]
   },
