@@ -1,6 +1,6 @@
 # DIRD Models
 
-[![DOI](https://zenodo.org/badge/1121740748.svg)](https://doi.org/10.5281/zenodo.19666694)
+[![DOI](https://zenodo.org/badge/1121740748.svg)](https://doi.org/10.5281/zenodo.19666694) [![License: AGPL v3](https://img.shields.io/badge/License-AGPLv3-blue.svg)](LICENSE)
 
 Computer vision models for pathological retina finding detection, focused on **Diabetic Retinopathy (DR)**.
 
