@@ -25,13 +25,26 @@ detection model. Companion to the **evaluation** record in the DIRD+ repo
 | License | GNU AGPLv3 |
 | Status | REQUIRES_IMPROVEMENT |
 
-## 2. Intended use
+## 2. Intended use & clinical risk
 - **Use:** research / screening **assist** for diabetic retinopathy on color fundus images.
-- **Not** a medical device; **not** for autonomous diagnosis. Output is lesion detection
-  feeding a binary normal-vs-pathological screen.
-- Deployed downstream as binary screen with per-class calibrated thresholds (PCT_fpr02) —
-  see `Dird/validation/experiment-2-aptos`.
-- **⚠️ TODO:** explicit intended population, care setting, and contraindications.
+  Output is lesion detection feeding an image-level binary normal-vs-pathological screen.
+- **Users:** clinicians / screening programs, with a **human reading every case**. Assistive
+  triage only — never the sole decision-maker.
+- **Population:** adults in DR screening with **gradable** color fundus images. Validated OOD
+  on Indian (APTOS), French (Messidor), Chinese (DDR) populations.
+- **Operating point:** APTOS-calibrated per-class thresholds (PCT_fpr02); transport across
+  sites (ΔMCC ≈ 0). Do **not** deploy the conf-0.25 baseline (low specificity).
+- **NOT for:** autonomous diagnosis, treatment decisions, non-DR pathology, ungradable/
+  low-quality images, non-fundus modalities (OCT/FA), or regulated-device use. **Not** a
+  cleared/CE-marked device.
+
+**Key clinical risks** (full table: `Dird/validation/README.md` §Clinical risk):
+- **Missed mild DR:** grade-1 sensitivity 0.99 in-domain → **0.44 / 0.51** OOD. A negative
+  does **not** rule out early DR in a new population → mandatory human read + recall policy.
+- **Weak hemorrhage channel** (AUC 0.56–0.64): do not rely on the model to exclude
+  hemorrhagic DR.
+- **Cross-site drift** (AUC 0.95 → 0.82): per-site re-validation + live monitoring before use.
+- **Unassessed subgroups** (camera/hospital/age/sex): disclosed gap, no metadata available.
 
 ## 3. Classes (6 active of 11 defined)
 | idx | class | category | severity | detected |
