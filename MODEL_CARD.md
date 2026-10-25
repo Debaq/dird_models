@@ -16,7 +16,7 @@ detection model. Companion to the **evaluation** record in the DIRD+ repo
 |---|---|
 | Version | DIRDv2r0 (`detection-v2.0.0`) |
 | Architecture | YOLOv26s — object detection, end-to-end NMS |
-| Framework | ultralytics (JSON notes "YOLOv26n" — **⚠️ reconcile n vs s**) |
+| Framework | ultralytics. **Size reconciled (2026-10-24): YOLOv26s.** The ONNX file is 38.17 MB ≈ 9.47 M float32 parameters, which matches the 9,467,502 parameters reported in the medRxiv preprint and the `s` variant; the preprint's "YOLOv26n" label is a typo. |
 | Input | 640×640 RGB fundus |
 | Output | tensor `[1, 300, 6]` = `[x1,y1,x2,y2,score,class_idx]`, NMS by model, max 300 det |
 | ONNX opset | 14 (browser-compatible, via `MODEL_CONVERTER.py`) |
@@ -60,8 +60,8 @@ detection model. Companion to the **evaluation** record in the DIRD+ repo
 ## 4. Training data — ⚠️ TODO (not on disk)
 | TRIPOD+AI item | Value |
 |---|---|
-| Data source(s) | **⚠️ TODO** — likely IDRiD + others (bbox derived from masks); confirm exact datasets |
-| Sample size (train/val/test) | **⚠️ TODO** |
+| Data source(s) | Per the medRxiv preprint (doi:10.64898/2026.04.26.26351745): **500 images from APTOS 2019 (Kaggle)**, prioritising grades 3–4, pseudo-labelled by an earlier model and reviewed/corrected by the team. **Image IDs not recoverable** → APTOS 2019 must be treated as *in-distribution* for this model (see `Dird/validation/experiment-2-aptos/`). |
+| Sample size (train/val/test) | 500 images total (preprint); split sizes **⚠️ TODO** |
 | Class distribution / imbalance | **⚠️ TODO** (hemorrhage known under-represented) |
 | Split strategy (patient-level? leakage control?) | **⚠️ TODO** |
 | Inclusion / exclusion / gradability | **⚠️ TODO** |
@@ -72,7 +72,7 @@ detection model. Companion to the **evaluation** record in the DIRD+ repo
 ## 5. Training configuration — ⚠️ TODO
 | Item | Value |
 |---|---|
-| Epochs | **⚠️ TODO** |
+| Epochs | 120 (preprint, Fig. 3) |
 | Batch size | **⚠️ TODO** |
 | Optimizer / LR / schedule | **⚠️ TODO** |
 | Augmentations | **⚠️ TODO** |
